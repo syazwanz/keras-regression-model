@@ -8,7 +8,7 @@
 + Increase hidden layer
 + MODEL: 
 |Step |Hidden Layers|Nodes|Activation Function|Optimizer|Loss Function     |Epochs|
-|:---:|:---:        |:---:|:---:              |:---:    |:---:             |:---: |
+|-----|-------------|-----|-------------------|---------|------------------|------|
 |A    |3            |25   |ReLU               |Adam     |Mean Squared Error|25    |
 |B    |3            |25   |ReLU               |Adam     |Mean Squared Error|25    |
 |C    |3            |25   |ReLU               |Adam     |Mean Squared Error|25    |
