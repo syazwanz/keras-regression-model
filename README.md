@@ -7,7 +7,7 @@
 + Increase epochs
 + Increase hidden layer
 
- **MODEL:**
+ **FINAL MODEL:**
 
 |Step |Input         |Hidden Layers|Nodes|Activation Function|Optimizer|Loss Function     |Epochs |
 |-----|--------------|-------------|-----|-------------------|---------|------------------|-------|
@@ -16,11 +16,12 @@
 |C    |Normalized    |1            |10   |ReLU               |Adam     |Mean Squared Error|100    |
 |D    |Normalized    |3            |10   |ReLU               |Adam     |Mean Squared Error|100    |
 
-3 hidden layers with 10 nodes, ReLu activation function, adam optimizer, mse loss function and 100 epochs
-Model Evaluation: Mean Squared Error
+2. [Building a regression model using Keras deep learning library Version 2.0](https://msyazwan.github.io/Keras-Deep-Learning-Model/Concrete-Strength-Keras-v2)
 
-2. Building a regression model using Keras deep learning library Version 2.0
-FINAL MODEL: 7 hidden layers with 25 nodes, ReLu activation function, adam optimizer, mse loss function and 250 epochs
-MODEL EVALUATION: Mean Squared Error = 31.35 R^2 = 0.89
+ **FINAL MODEL:**
 
-3. Predict a new value using pre-train model
+|Input     |Hidden Layers|Nodes|Activation Function|Optimizer|Loss Function     |Epochs |
+|----------|-------------|-----|-------------------|---------|------------------|-------|
+|Normalized|7            |25   |ReLU               |Adam     |Mean Squared Error|250    |
+
+3. [Predict a new value using pre-train model](https://msyazwan.github.io/Keras-Deep-Learning-Model/Concrete-Strength-Keras-v2)
