@@ -1,6 +1,12 @@
 # Keras Deep Learning Model
 Building a Concrete Compressive Strength Model using Deep Learning Keras Library
 
+<ol type="i">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+
 1. Building and optimizing a regression model using Keras deep learning library
   - Building a base model
   - Normalize features/predictors value
