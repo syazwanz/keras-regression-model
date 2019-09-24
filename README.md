@@ -3,10 +3,12 @@ Building a Concrete Compressive Strength Model using Deep Learning Keras Library
 
 <ol type="1">
   <li>Building and optimizing a regression model using Keras deep learning library</li>
+    <ol type="i">
     <ul>Building a base model</ul>
     <ul>Normalize features/predictors value</ul>
     <ul>Increase epochs/iterations</ul>
     <ul>Increase hidden layer</ul>
+    </ol>
   <li>Building a regression model using Keras deep learning library Version 2.0</li>
   <li>Predict a new value using pre-train model</li>
 </ol>
