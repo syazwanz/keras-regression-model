@@ -7,13 +7,12 @@
 + Increase epochs
 + Increase hidden layer
 + MODEL: 
-
-|Step | Layers        | Nodes           | Activation Function  |Optimizer|Loss Function| Epochs|
-| --- | --- | --- | --- | --- | --- |--- |
-|A    | ||||||
-|B    | ||||||
-|C    |||||||
-|D    |||||||
+|Step |Hidden Layers|Nodes|Activation Function|Optimizer|Loss Function     |Epochs|
+|:---:|:---:        |:---:|:---:              |:---:    |:---:             |:---: |
+|A    |3            |25   |ReLU               |Adam     |Mean Squared Error|25    |
+|B    |3            |25   |ReLU               |Adam     |Mean Squared Error|25    |
+|C    |3            |25   |ReLU               |Adam     |Mean Squared Error|25    |
+|D    |3            |25   |ReLU               |Adam     |Mean Squared Error|25    |
 
 3 hidden layers with 10 nodes, ReLu activation function, adam optimizer, mse loss function and 100 epochs
 Model Evaluation: Mean Squared Error
