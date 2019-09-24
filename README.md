@@ -7,7 +7,7 @@
 + Increase epochs
 + Increase hidden layer
 
-...**MODEL:**
+⋅⋅⋅MODEL:
 
 |Step |Hidden Layers|Nodes|Activation Function|Optimizer|Loss Function     |Epochs|
 |-----|-------------|-----|-------------------|---------|------------------|------|
