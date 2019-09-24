@@ -6,14 +6,14 @@
 + Normalize features value
 + Increase epochs
 + Increase hidden layer
-+ FINAL MODEL: 
++ MODEL: 
 
-|Step | Layers        | Nodes           | Activation Function  |Optimizer|Loss Function| Epochs
-|-----|
-|A    | ------------- |:-------------:| -----:|
-|B    | col 3 is      | right-aligned | $1600 |
-|C    |
-|D    |
+|Step | Layers        | Nodes           | Activation Function  |Optimizer|Loss Function| Epochs|
+| --- | --- | --- | --- | --- | --- |--- |
+|A    | ||||||
+|B    | ||||||
+|C    |||||||
+|D    |||||||
 
 3 hidden layers with 10 nodes, ReLu activation function, adam optimizer, mse loss function and 100 epochs
 Model Evaluation: Mean Squared Error
