@@ -1,7 +1,7 @@
 # Keras Deep Learning Model
 ### Building a Concrete Strength Regression Model using Deep Learning Keras Library
 
-![](tf-keras.png){:width="10%"}
+![](tf-keras.png)
 
 1. [Building and optimizing a regression model using Keras deep learning library](https://msyazwan.github.io/Keras-Deep-Learning-Model/Concrete-Strength-Keras)
 + Build a base model
