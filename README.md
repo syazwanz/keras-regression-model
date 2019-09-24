@@ -17,7 +17,7 @@
 |D    |Normalized    |3            |10   |ReLU               |Adam     |Mean Squared Error|100    |
 
 
-**2. Building a regression model using Keras deep learning library Version 2.0** [Link](https://msyazwan.github.io/Keras-Deep-Learning-Model/Concrete-Strength-Keras-v2)
+[2. Building a regression model using Keras deep learning library Version 2.0](https://msyazwan.github.io/Keras-Deep-Learning-Model/Concrete-Strength-Keras-v2)
 
  **FINAL MODEL:**
 
@@ -26,4 +26,4 @@
 |Normalized|7            |25   |ReLU               |Adam     |Mean Squared Error|250    |
 
 
-**3. Predict a new value using pre-train model** [Link](https://msyazwan.github.io/Keras-Deep-Learning-Model/Concrete-Strength-Keras-v2)
+[3. Predict a new value using pre-train model](https://msyazwan.github.io/Keras-Deep-Learning-Model/Concrete-Strength-Keras-v2)
