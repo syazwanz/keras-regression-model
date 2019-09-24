@@ -6,7 +6,8 @@
 + Normalize features value
 + Increase epochs
 + Increase hidden layer
-+ MODEL: 
++ MODEL:
+
 |Step |Hidden Layers|Nodes|Activation Function|Optimizer|Loss Function     |Epochs|
 |-----|-------------|-----|-------------------|---------|------------------|------|
 |A    |3            |25   |ReLU               |Adam     |Mean Squared Error|25    |
