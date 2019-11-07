@@ -1,7 +1,7 @@
 numpy
 pandas
 plotly
-matplotlib
+matplotlib==3.1.0
 seaborn
 sklearn
 tensorflow
