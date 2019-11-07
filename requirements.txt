@@ -5,3 +5,8 @@ dash-renderer
 numpy
 pandas
 plotly
+matplotlib
+seaborn
+sklearn
+tensorflow
+keras
