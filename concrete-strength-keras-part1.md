@@ -1,11 +1,11 @@
 
+In this part 1 notebook, we will build a regression model to predict the compressive strength of concrete based on its ingredients. The regression model will be built using Keras deep learning framework. The model will be run several times with different network properties such as number of epochs and hidden layer, to increase the model accuracy.
+
 <h2><center> Building a Concrete Compressive Strength Model using Deep Learning Keras Library </center></h2>
 
 <img src = "tf-keras.png" width = 500>
 
-<strong>The dataset is about the compressive strength of different samples of concrete based on the volumes of the different ingredients that were used to make them.</strong>
-    
-<strong>Ingredients include:</strong>
+<strong>Concrete Ingredients:</strong>
 <ol type="1">
   <li>Cement</li>
   <li>Blast Furnace Slag</li>
@@ -16,8 +16,6 @@
   <li>Fine Aggregate</li>
   <li>Age</li>
 </ol>
-
-<h3><font color="red"> The objective of this project is to build a regression model using Keras library to predict the compressive strength of a concrete based on its ingredients.</font></h3>
 
 ### 1. OBTAIN - Obtain Data from its Source.
 
@@ -30,9 +28,6 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 import seaborn as sns
-
-import time
-start = time.time()
 ```
 
 
@@ -151,6 +146,20 @@ df.head()
 
 Let's check the shape of the dataframe
 
+
+```python
+df.shape
+```
+
+
+
+
+    (1030, 9)
+
+
+
+1030 rows and 9 columns
+
 ### 2. SCRUB - Clean / Preprocess Data to Format that Machine Understand.
 
 
@@ -174,23 +183,32 @@ df.isnull().sum()
 
 
 
-The data looks very clean; no missing data and all data is in numerical form. 
-
-Nothing much here, lets move to our next step!
-
-### 3. EXPLORE - Find Significant Patterns and Trends using Statistical Method.
-
 
 ```python
-df.shape
+df.dtypes
 ```
 
 
 
 
-    (1030, 9)
+    Cement                float64
+    Blast Furnace Slag    float64
+    Fly Ash               float64
+    Water                 float64
+    Superplasticizer      float64
+    Coarse Aggregate      float64
+    Fine Aggregate        float64
+    Age                     int64
+    Strength              float64
+    dtype: object
 
 
+
+The data looks very clean; no missing data and all data is in numerical form. 
+
+Nothing much here, lets move to our next step!
+
+### 3. EXPLORE - Find Significant Patterns and Trends using Statistical Method.
 
 
 ```python
@@ -341,7 +359,7 @@ plt.show()
 ```
 
 
-![png](output_16_0.png)
+![png](output_18_0.png)
 
 
 As our objective is mainly to build the model, we will just touch a few in this EDA (exploratory data analysis) section.
@@ -484,7 +502,7 @@ n_cols
 
 
 
-#### Importing Libraries
+#### Importing SKLEARN and KERAS Libraries
 
 
 ```python
@@ -549,8 +567,8 @@ print('mse_Mean: {:.2f}'.format(np.mean(mse_A)))
 print('mse_StdDev: {:.2f}'.format(np.std(mse_A)))
 ```
 
-    mse_Mean: 305.03
-    mse_StdDev: 281.36
+    mse_Mean: 466.84
+    mse_StdDev: 770.82
 
 
 
@@ -559,8 +577,8 @@ print('R^2_Mean: {:.2f}'.format(np.mean(r2_A)))
 print('R^2_StdDev: {:.2f}'.format(np.std(r2_A)))
 ```
 
-    R^2_Mean: -0.07
-    R^2_StdDev: 0.99
+    R^2_Mean: -0.68
+    R^2_StdDev: 2.90
 
 
 <strong><font color="red">B. MODEL WITH NORMALIZED DATA</font></strong>
@@ -710,8 +728,8 @@ print('mse_Mean: {:.2f}'.format(np.mean(mse_B)))
 print('mse_StdDev: {:.2f}'.format(np.std(mse_B)))
 ```
 
-    mse_Mean: 388.72
-    mse_StdDev: 107.32
+    mse_Mean: 349.64
+    mse_StdDev: 92.64
 
 
 
@@ -720,8 +738,8 @@ print('R^2_Mean: {:.2f}'.format(np.mean(r2_B)))
 print('R^2_StdDev: {:.2f}'.format(np.std(r2_B)))
 ```
 
-    R^2_Mean: -0.40
-    R^2_StdDev: 0.36
+    R^2_Mean: -0.27
+    R^2_StdDev: 0.34
 
 
 <strong><font color="red">C. MODEL WITH 100 EPOCHS</font></strong>
@@ -772,8 +790,8 @@ print('mse_Mean: {:.2f}'.format(np.mean(mse_C)))
 print('mse_StdDev: {:.2f}'.format(np.std(mse_C)))
 ```
 
-    mse_Mean: 165.84
-    mse_StdDev: 16.69
+    mse_Mean: 166.96
+    mse_StdDev: 14.89
 
 
 
@@ -783,7 +801,7 @@ print('R^2_StdDev: {:.2f}'.format(np.std(r2_C)))
 ```
 
     R^2_Mean: 0.40
-    R^2_StdDev: 0.07
+    R^2_StdDev: 0.06
 
 
 <strong><font color="red">D. MODEL WITH 3 HIDDEN LAYERS</font></strong>
@@ -836,8 +854,8 @@ print('mse_Mean: {:.2f}'.format(np.mean(mse_D)))
 print('mse_StdDev: {:.2f}'.format(np.std(mse_D)))
 ```
 
-    mse_Mean: 88.24
-    mse_StdDev: 25.20
+    mse_Mean: 95.28
+    mse_StdDev: 23.87
 
 
 
@@ -846,7 +864,7 @@ print('R^2_Mean: {:.2f}'.format(np.mean(r2_D)))
 print('R^2_StdDev: {:.2f}'.format(np.std(r2_D)))
 ```
 
-    R^2_Mean: 0.69
+    R^2_Mean: 0.65
     R^2_StdDev: 0.09
 
 
@@ -872,21 +890,12 @@ display(HTML(tabulate.tabulate(tabletest, tablefmt='html')))
 <table>
 <tbody>
 <tr><td>STEPS</td><td>MSE: Mean</td><td>MSE: StdDev</td><td>R^2: Mean</td><td>R^2: StdDev</td></tr>
-<tr><td>A    </td><td>305.03   </td><td>281.36     </td><td>-0.07    </td><td>0.99       </td></tr>
-<tr><td>B    </td><td>388.72   </td><td>107.32     </td><td>-0.4     </td><td>0.36       </td></tr>
-<tr><td>C    </td><td>165.84   </td><td>16.69      </td><td>0.69     </td><td>0.07       </td></tr>
-<tr><td>D    </td><td>88.24    </td><td>25.2       </td><td>0.69     </td><td>0.09       </td></tr>
+<tr><td>A    </td><td>466.84   </td><td>770.82     </td><td>-0.68    </td><td>2.9        </td></tr>
+<tr><td>B    </td><td>349.64   </td><td>92.64      </td><td>-0.27    </td><td>0.34       </td></tr>
+<tr><td>C    </td><td>166.96   </td><td>14.89      </td><td>0.65     </td><td>0.06       </td></tr>
+<tr><td>D    </td><td>95.28    </td><td>23.87      </td><td>0.65     </td><td>0.09       </td></tr>
 </tbody>
 </table>
-
-
-
-```python
-end = time.time()
-print('Time taken to complete iteration: {:.2f} minutes'.format((end-start)/60))
-```
-
-    Time taken to complete iteration: 29.72 minutes
 
 
 <strong>From the results above, we can clearly see that by applying:</strong>
