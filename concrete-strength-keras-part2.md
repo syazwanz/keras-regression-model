@@ -1,6 +1,8 @@
-In this part 2 notebook, we will increase all the network properties to achieve a higher model aacuracy. Later, the model will be saved, load and predict new concrete strength with new user defined parameters.
+In part 2, the network properties will again be increased to achieve a higher model accuracy. Later, the model will be saved, load and predict new concrete strength with new user-defined parameters.
 
-<h2><center> Building a Concrete Compressive Strength Model using Deep Learning Keras Library </center></h2>
+_Credit: IBM Cognitive Class_
+
+<h2><center> Building a Concrete Compressive Strength Model using Keras Framework </center></h2>
 
 <img src = "tf-keras.png" width = 500>
 
@@ -430,8 +432,8 @@ print('mse_Mean: {:.2f}'.format(np.mean(mse)))
 print('mse_StdDev: {:.2f}'.format(np.std(mse)))
 ```
 
-    mse_Mean: 32.41
-    mse_StdDev: 5.47
+    mse_Mean: 31.73
+    mse_StdDev: 5.62
     
 
 
@@ -440,7 +442,7 @@ print('R^2_Mean: {:.2f}'.format(np.mean(r2)))
 print('R^2_StdDev: {:.2f}'.format(np.std(r2)))
 ```
 
-    R^2_Mean: 0.88
+    R^2_Mean: 0.89
     R^2_StdDev: 0.02
     
 
@@ -449,8 +451,8 @@ print('R^2_StdDev: {:.2f}'.format(np.std(r2)))
 from IPython.display import HTML, display
 import tabulate
 
-tabletest = [['PART','MSE: Mean','MSE: StdDev','R^2: Mean','R^2: StdDev'],
-         ['2', round(np.mean(mse),2), round(np.std(mse),2), round(np.mean(r2),2), round(np.std(r2),2)]]
+tabletest = [['MSE: Mean','MSE: StdDev','R^2: Mean','R^2: StdDev'],
+         [round(np.mean(mse),2), round(np.std(mse),2), round(np.mean(r2),2), round(np.std(r2),2)]]
 
 display(HTML(tabulate.tabulate(tabletest, tablefmt='html')))
 ```
@@ -458,15 +460,16 @@ display(HTML(tabulate.tabulate(tabletest, tablefmt='html')))
 
 <table>
 <tbody>
-<tr><td>PART</td><td>MSE: Mean</td><td>MSE: StdDev</td><td>R^2: Mean</td><td>R^2: StdDev</td></tr>
-<tr><td>2   </td><td>32.41    </td><td>5.47       </td><td>0.88     </td><td>0.02       </td></tr>
+<tr><td>MSE: Mean</td><td>MSE: StdDev</td><td>R^2: Mean</td><td>R^2: StdDev</td></tr>
+<tr><td>31.73    </td><td>5.62       </td><td>0.89     </td><td>0.02       </td></tr>
 </tbody>
 </table>
 
 
-#### Comparing the results from Part 1:
-- mean squared error has gone down from 95.28 to 32.41
-- R^2 has gone up from 0.65 to 0.88
+<b> Comparing the results from Part 1:</b>
+
+- mean squared error has gone down from **112.99** to **31.73**
+- R^2 has gone up from **0.59** to **0.89**
 
 <b>which means the overall accuracy has gone up compared from the previous run.</b>
 
@@ -477,9 +480,9 @@ display(HTML(tabulate.tabulate(tabletest, tablefmt='html')))
 model.save('keras_reg.h5')
 ```
 
-# Predict New Concrete Strength Value with Pretrained Model
+## Predict New Concrete Strength Value with Pretrained Model
 
-## Import Module
+### Import Module
 
 
 ```python
@@ -487,14 +490,14 @@ import numpy as np
 from keras.models import load_model
 ```
 
-## Load Pretrained Model
+### Load Pretrained Model
 
 
 ```python
 keras_reg = load_model('keras_reg.h5')
 ```
 
-## Insert New Parameters
+### Insert New Parameters
 
 
 ```python
@@ -530,12 +533,12 @@ X_norm = (X - X.mean()) / X.std()
 strength_pred = keras_reg.predict(X_norm)
 ```
 
-## New Prediction
+### New Prediction
 
 
 ```python
 print('The predicted concrete strength is {:.2f}'.format(strength_pred[0][0]))
 ```
 
-    The predicted concrete strength is 71.87
+    The predicted concrete strength is 56.26
     

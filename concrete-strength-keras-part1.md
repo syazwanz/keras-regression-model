@@ -1,7 +1,8 @@
+In part 1 of this notebook, a regression model will be built using Keras deep learning framework to predict the compressive strength of concrete, based on its ingredients. The model will be trained several times with different network properties such as the number of epochs and hidden layers, to increase the model accuracy.
 
-In this part 1 notebook, we will build a regression model to predict the compressive strength of concrete based on its ingredients. The regression model will be built using Keras deep learning framework. The model will be run several times with different network properties such as number of epochs and hidden layer, to increase the model accuracy.
+_Credit: IBM Cognitive Class_
 
-<h2><center> Building a Concrete Compressive Strength Model using Deep Learning Keras Library </center></h2>
+<h2><center> Building a Concrete Compressive Strength Model using Keras Framework </center></h2>
 
 <img src = "tf-keras.png" width = 500>
 
@@ -19,7 +20,7 @@ In this part 1 notebook, we will build a regression model to predict the compres
 
 ### 1. OBTAIN - Obtain Data from its Source.
 
-First lets download the data and stored in pandas dataframe
+First lets download the data and stored in pandas dataframe.
 
 
 ```python
@@ -144,7 +145,7 @@ df.head()
 
 
 
-Let's check the shape of the dataframe
+Let's check the shape of the dataframe:
 
 
 ```python
@@ -158,7 +159,7 @@ df.shape
 
 
 
-1030 rows and 9 columns
+It has 1030 rows and 9 columns.
 
 ### 2. SCRUB - Clean / Preprocess Data to Format that Machine Understand.
 
@@ -359,14 +360,14 @@ plt.show()
 ```
 
 
-![png](output_18_0.png)
+![png](output_19_0.png)
 
 
 As our objective is mainly to build the model, we will just touch a few in this EDA (exploratory data analysis) section.
 
 ### 4. MODEL - Construct Model to Predict and Forecast.
 
-The part where the magic happens
+The part where the magic happens.
 
 #### Split Data to Predictors and Target
 
@@ -517,7 +518,7 @@ from keras.layers import Dense
 ```
 
     Using TensorFlow backend.
-
+    
 
 ### Building the Model
 
@@ -567,9 +568,9 @@ print('mse_Mean: {:.2f}'.format(np.mean(mse_A)))
 print('mse_StdDev: {:.2f}'.format(np.std(mse_A)))
 ```
 
-    mse_Mean: 466.84
-    mse_StdDev: 770.82
-
+    mse_Mean: 421.94
+    mse_StdDev: 595.59
+    
 
 
 ```python
@@ -577,9 +578,9 @@ print('R^2_Mean: {:.2f}'.format(np.mean(r2_A)))
 print('R^2_StdDev: {:.2f}'.format(np.std(r2_A)))
 ```
 
-    R^2_Mean: -0.68
-    R^2_StdDev: 2.90
-
+    R^2_Mean: -0.54
+    R^2_StdDev: 2.20
+    
 
 <strong><font color="red">B. MODEL WITH NORMALIZED DATA</font></strong>
 
@@ -728,9 +729,9 @@ print('mse_Mean: {:.2f}'.format(np.mean(mse_B)))
 print('mse_StdDev: {:.2f}'.format(np.std(mse_B)))
 ```
 
-    mse_Mean: 349.64
-    mse_StdDev: 92.64
-
+    mse_Mean: 372.05
+    mse_StdDev: 104.26
+    
 
 
 ```python
@@ -738,9 +739,9 @@ print('R^2_Mean: {:.2f}'.format(np.mean(r2_B)))
 print('R^2_StdDev: {:.2f}'.format(np.std(r2_B)))
 ```
 
-    R^2_Mean: -0.27
-    R^2_StdDev: 0.34
-
+    R^2_Mean: -0.32
+    R^2_StdDev: 0.37
+    
 
 <strong><font color="red">C. MODEL WITH 100 EPOCHS</font></strong>
 
@@ -790,9 +791,9 @@ print('mse_Mean: {:.2f}'.format(np.mean(mse_C)))
 print('mse_StdDev: {:.2f}'.format(np.std(mse_C)))
 ```
 
-    mse_Mean: 166.96
-    mse_StdDev: 14.89
-
+    mse_Mean: 162.55
+    mse_StdDev: 16.92
+    
 
 
 ```python
@@ -800,9 +801,9 @@ print('R^2_Mean: {:.2f}'.format(np.mean(r2_C)))
 print('R^2_StdDev: {:.2f}'.format(np.std(r2_C)))
 ```
 
-    R^2_Mean: 0.40
-    R^2_StdDev: 0.06
-
+    R^2_Mean: 0.41
+    R^2_StdDev: 0.05
+    
 
 <strong><font color="red">D. MODEL WITH 3 HIDDEN LAYERS</font></strong>
 
@@ -854,9 +855,9 @@ print('mse_Mean: {:.2f}'.format(np.mean(mse_D)))
 print('mse_StdDev: {:.2f}'.format(np.std(mse_D)))
 ```
 
-    mse_Mean: 95.28
-    mse_StdDev: 23.87
-
+    mse_Mean: 112.99
+    mse_StdDev: 187.54
+    
 
 
 ```python
@@ -864,9 +865,9 @@ print('R^2_Mean: {:.2f}'.format(np.mean(r2_D)))
 print('R^2_StdDev: {:.2f}'.format(np.std(r2_D)))
 ```
 
-    R^2_Mean: 0.65
-    R^2_StdDev: 0.09
-
+    R^2_Mean: 0.59
+    R^2_StdDev: 0.66
+    
 
 ### 5. iNTERPRET - Analyze and Interpret Model
 
@@ -890,10 +891,10 @@ display(HTML(tabulate.tabulate(tabletest, tablefmt='html')))
 <table>
 <tbody>
 <tr><td>STEPS</td><td>MSE: Mean</td><td>MSE: StdDev</td><td>R^2: Mean</td><td>R^2: StdDev</td></tr>
-<tr><td>A    </td><td>466.84   </td><td>770.82     </td><td>-0.68    </td><td>2.9        </td></tr>
-<tr><td>B    </td><td>349.64   </td><td>92.64      </td><td>-0.27    </td><td>0.34       </td></tr>
-<tr><td>C    </td><td>166.96   </td><td>14.89      </td><td>0.65     </td><td>0.06       </td></tr>
-<tr><td>D    </td><td>95.28    </td><td>23.87      </td><td>0.65     </td><td>0.09       </td></tr>
+<tr><td>A    </td><td>421.94   </td><td>595.59     </td><td>-0.54    </td><td>2.2        </td></tr>
+<tr><td>B    </td><td>372.05   </td><td>104.26     </td><td>-0.32    </td><td>0.37       </td></tr>
+<tr><td>C    </td><td>162.55   </td><td>16.92      </td><td>0.59     </td><td>0.05       </td></tr>
+<tr><td>D    </td><td>112.99   </td><td>187.54     </td><td>0.59     </td><td>0.66       </td></tr>
 </tbody>
 </table>
 
